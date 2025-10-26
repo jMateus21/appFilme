@@ -1,0 +1,95 @@
+.slider {
+    margin: 0 auto;
+    padding: 0 4%;
+    max-width: 1280px;
+}
+
+.content {
+    height: 100vh;
+    position: relative;
+
+    .container .filme {
+        position: absolute;
+        inset: 0;
+        overflow: hidden;
+        opacity: 0;
+        
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+}
+
+.container .filme::after{
+    content: '';
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(to top, #1c1b1b, transparent);
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.container .filme .text{
+    position: absolute;
+    left: 10%;
+    top: 35%;
+    color: #fff;
+    z-index: 1;
+
+    width: 80%;
+    max-width: 600px;
+    h2 {
+        font-size: 5rem;
+    }
+}
+
+.btn-container {
+    width: 100%;
+    position: absolute;
+    left: 0;
+    bottom: 50px;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+
+    .btn-nav {
+        width: 30px;
+        height: 15px;
+        border: 1px solid #fff;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: 0.5s;
+    }
+}
+
+.container .filme.action h2 {
+    transform: translateY(60px);
+    opacity: 0;
+    animation: anima-text 0.5s ease-in-out 0.7s forwards;
+}
+
+.content .slider .filme.action {
+    opacity: 1;
+    z-index: 2;
+}
+
+.btn-container .btn-nav:hover {
+    background-color: #fff;
+}
+
+.btn-container .btn-nav.action {
+    background-color: #fff;
+}
+
+@keyframes anima-text{
+    100%{
+        transform: translateY(0);
+        opacity: 1;
+    }
+}

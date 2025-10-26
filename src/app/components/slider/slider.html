@@ -1,0 +1,24 @@
+<section>
+    <div class="content">
+
+        <div class="slider">
+            <div class="container">
+                @for(i of img; track $index) {    
+                    <div class="filme" [class.action]="indiceAtual === $index">
+                        <img [src]="img[indiceAtual]" alt="filme_teste">
+                        <div class="text">
+                            <h2>{{nome[indiceAtual]}}</h2>
+                        </div>
+                    </div>
+                }    
+            </div>
+        </div>
+
+        <div class="btn-container">
+            @for(i of img; track $index) {
+                <div class="btn-nav" [class.action]="indiceAtual === $index" (click) = 'slidar($index)'>
+                </div>
+            }
+        </div>
+    </div>
+</section>
