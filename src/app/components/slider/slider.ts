@@ -24,14 +24,8 @@ export class Slider {
   slidar(indiceAtual: number) {
     this.indiceAtual = indiceAtual;
 
-    this.anima = -1;
-
-    setTimeout(() => {
-      this.anima = indiceAtual;
-    }, 100);
-
     clearInterval(this.intervalo)
-    this.mudarIntervalo
+    this.mudarIntervalo()
   }
 
   after() {
@@ -40,12 +34,6 @@ export class Slider {
     } else {
       this.indiceAtual++;
     }
-
-    this.anima = -1;
-
-    setTimeout(() => {
-      this.anima = this.indiceAtual;
-    }, 100);
   }
 
   mudarIntervalo() {
