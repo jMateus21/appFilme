@@ -1,0 +1,32 @@
+.container {
+    height: 550px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(26, 25, 25);
+}
+
+.content {
+    max-width: 1400px;
+    width: 95%;
+}
+
+.carousel .poster .poster-item{
+    width: 250px;
+    height: 350px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.carousel .poster{
+    display: grid;
+    gap: 18px;
+    grid-template-columns: repeat(10, 1fr);
+    overflow: auto;
+    font-size: 0;
+    scrollbar-width: none;
+}
+
+.carousel .poster::-webkit-scrollbar{
+    display: none;
+}

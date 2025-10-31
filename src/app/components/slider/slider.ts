@@ -18,7 +18,6 @@ export class Slider {
   ]
 
   indiceAtual = 0;
-  anima = 0;
   intervalo: any;
 
   slidar(indiceAtual: number) {
@@ -46,5 +45,3 @@ export class Slider {
     this.mudarIntervalo()
   }  
 }
-
-
