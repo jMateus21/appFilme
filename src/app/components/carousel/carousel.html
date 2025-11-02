@@ -1,11 +1,27 @@
 <div class="container">
     <div class="content">
-        <div class="carousel">
-            <div class="poster">
-                @for(i of img; track $index){
-                    <img [src]="i" alt="de volta para o futuro" class="poster-item">
-                }
+
+        <div class="name"><h1>Em alta</h1></div>
+
+            <div class="wrap">
+
+                <div class="carousel">
+
+                    <button #prevBtn id="prev-carousel" [class.hidden]="back == 0" (click) = 'scrollPrev()' class="btn" >
+                        <img src="chevron-left.svg" alt="backward" class="btn-nav">
+                    </button>
+
+                        <div #poster class="poster" >
+                            @for(i of img; track $index){
+                                <img [src]="i" alt="de volta para o futuro" class="poster-item">
+                            }
+                        </div>
+
+                    <button #nextBtn id="next-carousel" [class.hidden]="next == 0" (click) = 'scrollNext()' class="btn">
+                        <img src="chevron-right.svg" alt="backward" class="btn-nav">
+                    </button>
+                </div>
+
             </div>
-        </div>
     </div>
 </div>

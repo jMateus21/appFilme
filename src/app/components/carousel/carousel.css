@@ -1,14 +1,59 @@
 .container {
-    height: 550px;
+    height: 580px;
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: rgb(26, 25, 25);
+    background-color: #1a1919;
 }
 
 .content {
     max-width: 1400px;
-    width: 95%;
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+}
+
+.content .name {
+    color: white;
+    font-size: 23px;
+}
+
+.btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 100px;
+    width: 50px;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    border-radius: 9px;
+}
+
+.btn .btn-nav{
+    height: 100px;
+    width: 50px;
+    background-color: #232222;  
+    border-radius: 8px;
+}
+
+.btn .btn-nav:active {
+    background-color: #292929; 
+}
+
+.carousel .btn#prev-carousel {
+    left: -60px;
+}
+
+.carousel .btn#next-carousel {
+    right: -60px;
+}
+
+.hidden {
+    display: none;
 }
 
 .carousel .poster .poster-item{
@@ -16,12 +61,17 @@
     height: 350px;
     object-fit: cover;
     border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.carousel {
+    position: relative;
 }
 
 .carousel .poster{
     display: grid;
     gap: 18px;
-    grid-template-columns: repeat(10, 1fr);
+    grid-template-columns: repeat(8, 1fr);
     overflow: auto;
     font-size: 0;
     scrollbar-width: none;

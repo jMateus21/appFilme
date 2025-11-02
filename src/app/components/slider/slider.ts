@@ -4,21 +4,34 @@ import { Component } from '@angular/core';
   selector: 'app-slider',
   imports: [],
   templateUrl: './slider.html',
-  styleUrl: './slider.css'
+  styleUrls: ['./slider.css']
 })
+
 export class Slider {
-  img = [
-    "vingadores.jpg",
-    "duna-2.jpg",
-    "titanic.jpg",
-  ]
 
-  nome = [
-    "Vingadores", "Duna 2", "Titanic"
-  ]
-
+  url: string = 'http://localhost:8080';
   indiceAtual = 0;
   intervalo: any;
+
+  img: string[] = []
+
+  nome: string[] = []
+
+  ngOnInit(){
+    this.mudarIntervalo();
+    this.filmeSlider();
+  }  
+
+  async filmeSlider(){
+    const filmes = await fetch(`${this.url}/cartaz`)
+    const filmesFilter: any = await filmes.json();
+
+    for(let i = 0; i < 5; i++){
+      console.log(`https://image.tmdb.org/t/p/original${filmesFilter[i].backdrop_path}`)
+      this.img.push(`https://image.tmdb.org/t/p/original${filmesFilter[i].backdrop_path}`)
+      this.nome.push(filmesFilter[i].title)
+    }
+  }
 
   slidar(indiceAtual: number) {
     this.indiceAtual = indiceAtual;
@@ -41,7 +54,4 @@ export class Slider {
     }, 4000);
   }
 
-  ngOnInit(){
-    this.mudarIntervalo()
-  }  
 }
