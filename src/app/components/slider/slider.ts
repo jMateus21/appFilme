@@ -14,7 +14,6 @@ export class Slider {
   intervalo: any;
 
   img: string[] = []
-
   nome: string[] = []
 
   ngOnInit(){
@@ -23,11 +22,10 @@ export class Slider {
   }  
 
   async filmeSlider(){
-    const filmes = await fetch(`${this.url}/cartaz`)
+    const filmes = await fetch(`${this.url}/slider`)
     const filmesFilter: any = await filmes.json();
 
     for(let i = 0; i < 5; i++){
-      console.log(`https://image.tmdb.org/t/p/original${filmesFilter[i].backdrop_path}`)
       this.img.push(`https://image.tmdb.org/t/p/original${filmesFilter[i].backdrop_path}`)
       this.nome.push(filmesFilter[i].title)
     }

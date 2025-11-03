@@ -62,6 +62,7 @@
     object-fit: cover;
     border-radius: 8px;
     margin-bottom: 20px;
+    
 }
 
 .carousel {
@@ -80,3 +81,4 @@
 .carousel .poster::-webkit-scrollbar{
     display: none;
 }
+
