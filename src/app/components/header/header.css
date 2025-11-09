@@ -1,22 +1,9 @@
-.container {
+a {
     width: 100%;
     position: absolute;
     z-index: 9999999;
     color: #fff;
-    display: flex;
-    justify-content: space-between;
-    padding: 20px;
-
-    
-}
-
-.buscar {
-    display: flex;
-    gap: 8px;
-
-    svg {
-        width: 35px;
-        height: 35px;
-        cursor: pointer;  
-    }
+    justify-items: end;
+    padding: 10px 15px;
+    text-decoration: none;
 }

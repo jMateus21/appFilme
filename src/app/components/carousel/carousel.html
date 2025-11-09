@@ -13,15 +13,14 @@
 
                         <div #poster class="poster" >
                             @for(i of img; track $index){
-                                <img [src]="i" alt="de volta para o futuro" class="poster-item">
+                                <a routerLink="/overview/{{idFilme[$index]}}"><img [src]="i" alt="{{title[$index]}}" class="poster-item"></a>
                             }
                         </div>
 
                     <button #nextBtn id="next-carousel" [class.hidden]="next == 0" (click) = 'scrollNext()' class="btn">
-                        <img src="chevron-right.svg" alt="backward" class="btn-nav">
+                            <img src="chevron-right.svg" alt="backward" class="btn-nav">
                     </button>
                 </div>
-
             </div>
     </div>
 </div>
